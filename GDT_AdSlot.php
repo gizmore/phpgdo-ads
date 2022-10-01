@@ -24,6 +24,11 @@ final class GDT_AdSlot extends GDT_Enum
 		],
 	];
 	
+	public static function slots() : array
+	{
+		return array_keys(self::$DATA);
+	}
+	
 	protected function __construct()
 	{
 		parent::__construct();

@@ -1,8 +1,7 @@
 <?php
-namespace gdo;
+namespace GDO\Ads;
 
 use GDO\Core\GDT_Object;
-use GDO\Ads\GDO_Advertisement;
 
 /**
  * An advertisement referenced object.
