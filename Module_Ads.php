@@ -102,9 +102,8 @@ final class Module_Ads extends GDO_Module
 		{
 			if (GDO_User::current()->isAuthenticated())
 			{
-				GDT_Page::instance()->rightBar()->addFields(
-					GDT_Link::make('order_advertisement')->href(href('Ads', 'Order')),
-				);
+				$menuPayment = GDT_Page::instance()->rightBar()->getField('menu_payment');
+				$menuPayment->addField(GDT_Link::make('order_advertisement')->href(href('Ads', 'Order')));
 			}
 		}
 	}
