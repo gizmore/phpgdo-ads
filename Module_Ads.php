@@ -88,8 +88,8 @@ final class Module_Ads extends GDO_Module
 	
 	public function onIncludeScripts() : void
 	{
-		$this->addJS('js/gdo7-ads.js');
-		$this->addCSS('css/gdo7-ads.css');
+		$this->addJS('js/gdo7-ext.js');
+		$this->addCSS('css/gdo7-ext.css');
 	}
 
 	############
