@@ -31,7 +31,7 @@ final class Install
 		$name = "default_{$slot}.gif";
 		$path = $module->filePath("data/{$name}");
 		$file = GDO_File::fromPath($name, $path);
-		$file->insert()->copy();
+		$file->insert();
 	}
 	
 }

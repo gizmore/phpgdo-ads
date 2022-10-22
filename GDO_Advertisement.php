@@ -37,14 +37,15 @@ final class GDO_Advertisement extends GDO implements Orderable
 			GDT_AutoInc::make('ad_id'),
 			GDT_AdSlot::make('ad_slot')->notNull(),
 			GDT_Duration::make('ad_duration')->notNull(),
-			GDT_Url::make('ad_url')->notNull(),
+			GDT_Url::make('ad_url')->allowAll()->notNull(),
 			GDT_UInt::make('ad_views')->notNull()->initial('0'),
 			GDT_UInt::make('ad_max_views')->notNull(),
 			GDT_ImageFile::make('ad_image')->notNull()
 				->scaledVersion('popup', 1960,  1280)
 				->scaledVersion('top', 1960, 480)
-				->scaledVersion('left', 512, 960)
-				->scaledVersion('bottom', 1960, 640),
+				->scaledVersion('right', 512, 960)
+				->scaledVersion('bottom', 1960, 640)
+				->scaledVersion('left', 512, 960),
 			GDT_Checkbox::make('ad_fallback')->notNull()->initial('0'),
 			GDT_Money::make('ad_price'),
 			GDT_CreatedAt::make('ad_created'),
@@ -68,7 +69,6 @@ final class GDO_Advertisement extends GDO implements Orderable
 	{
 		return $this->getFile()->getSize();
 	}
-	
 	
 	##############
 	### Static ###
