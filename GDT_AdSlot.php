@@ -34,7 +34,7 @@ final class GDT_AdSlot extends GDT_Enum
 		parent::__construct();
 		$this->name('slot');
 		$this->label('slot');
-		$this->icon('slot');
+// 		$this->icon('slot');
 		$this->notNull();
 		$this->enumValues('popup', 'top', 'left', 'footer');
 		$this->emptyLabel('choose_slot');
