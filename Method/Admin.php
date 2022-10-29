@@ -9,4 +9,9 @@ final class Admin extends MethodPage
 	
 	use MethodAdsAdmin;
 	
+	public function getMethodTitle(): string
+	{
+		return t('btn_admin');
+	}
+	
 }
