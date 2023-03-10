@@ -79,7 +79,7 @@ final class GDO_Advertisement extends GDO implements Orderable
 			->where("ad_deleted IS NULL")
 			->where("ad_views < ad_max_views")
 			->where("ad_slot=".quote($slot))
-			->order("rand()")
+			->orderRand()
 			->first();
 		if (!($ad = $q->exec()->fetchObject()))
 		{
