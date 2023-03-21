@@ -1,21 +1,22 @@
 <?php
 namespace GDO\Ads\Method;
 
-use GDO\Form\GDT_Form;
-use GDO\Form\MethodForm;
-use GDO\Form\GDT_Submit;
-use GDO\Form\GDT_AntiCSRF;
 use GDO\Ads\GDO_Advertisement;
+use GDO\Form\GDT_AntiCSRF;
+use GDO\Form\GDT_Form;
+use GDO\Form\GDT_Submit;
+use GDO\Form\MethodForm;
 
 /**
  * Order an advertisement.
- * 
+ *
  * @author gizmore
  *
  */
 final class Order extends MethodForm
 {
-	public function createForm(GDT_Form $form) : void
+
+	public function createForm(GDT_Form $form): void
 	{
 		$table = GDO_Advertisement::table();
 		$form->addFields(

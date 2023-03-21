@@ -5,11 +5,12 @@ use GDO\Core\GDT_Object;
 
 /**
  * An advertisement referenced object.
- * 
+ *
  * @author gizmore
  */
 final class GDT_Ad extends GDT_Object
 {
+
 	protected function __construct()
 	{
 		parent::__construct();

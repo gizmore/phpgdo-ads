@@ -5,10 +5,12 @@ use GDO\Core\GDT_Enum;
 
 /**
  * An advertisement slot.
+ *
  * @author gizmore
  */
 final class GDT_AdSlot extends GDT_Enum
 {
+
 	public static $DATA = [
 		'popup' => [
 			'price_per_view' => 6,
@@ -23,12 +25,7 @@ final class GDT_AdSlot extends GDT_Enum
 			'price_per_view' => 2,
 		],
 	];
-	
-	public static function slots() : array
-	{
-		return array_keys(self::$DATA);
-	}
-	
+
 	protected function __construct()
 	{
 		parent::__construct();
@@ -39,15 +36,20 @@ final class GDT_AdSlot extends GDT_Enum
 		$this->enumValues('popup', 'top', 'left', 'footer');
 		$this->emptyLabel('choose_slot');
 	}
-	
-	public function getData() : array
+
+	public static function slots(): array
 	{
-		return self::$DATA[$this->getVar()];
+		return array_keys(self::$DATA);
 	}
-	
-	public function getPricePerView() : float
+
+	public function getPricePerView(): float
 	{
 		return $this->getData()['price_per_view'];
 	}
-	
+
+	public function getData(): array
+	{
+		return self::$DATA[$this->getVar()];
+	}
+
 }
