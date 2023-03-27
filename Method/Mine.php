@@ -2,6 +2,7 @@
 namespace GDO\Ads\Method;
 
 use GDO\Ads\GDO_Advertisement;
+use GDO\Core\GDO;
 use GDO\Table\MethodQueryList;
 
 /**
@@ -13,7 +14,7 @@ use GDO\Table\MethodQueryList;
 final class Mine extends MethodQueryList
 {
 
-	public function gdoTable()
+	public function gdoTable(): GDO
 	{
 		return GDO_Advertisement::table();
 	}
