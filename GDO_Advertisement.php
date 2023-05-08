@@ -34,11 +34,12 @@ final class GDO_Advertisement extends GDO implements Orderable
 	public static function forSlot(string $slot): ?self
 	{
 		$q = self::table()->select()
-			->where('ad_deleted IS NULL')
-			->where('ad_views < ad_max_views')
-			->where('ad_slot=' . quote($slot))
-			->orderRand()
-			->first();
+				 ->where('ad_deleted IS NULL')
+				 ->where('ad_views < ad_max_views')
+				 ->where('ad_slot=' . quote($slot))
+				 ->orderRand()
+				 ->first()
+		;
 		if (!($ad = $q->exec()->fetchObject()))
 		{
 			$ad = self::defaultForSlot($slot);
@@ -53,11 +54,12 @@ final class GDO_Advertisement extends GDO implements Orderable
 	private static function defaultForSlot(string $slot): ?self
 	{
 		return self::table()->select()
-			->where('ad_fallback=1')
-			->where('ad_slot=' . quote($slot))
-			->first()
-			->exec()
-			->fetchObject();
+				   ->where('ad_fallback=1')
+				   ->where('ad_slot=' . quote($slot))
+				   ->first()
+				   ->exec()
+				   ->fetchObject()
+		;
 	}
 
 	public function gdoColumns(): array
@@ -70,11 +72,11 @@ final class GDO_Advertisement extends GDO implements Orderable
 			GDT_UInt::make('ad_views')->notNull()->initial('0'),
 			GDT_UInt::make('ad_max_views')->notNull(),
 			GDT_ImageFile::make('ad_image')->notNull()
-				->scaledVersion('popup', 1960, 1280)
-				->scaledVersion('top', 1960, 480)
-				->scaledVersion('right', 512, 960)
-				->scaledVersion('bottom', 1960, 640)
-				->scaledVersion('left', 512, 960),
+						 ->scaledVersion('popup', 1960, 1280)
+						 ->scaledVersion('top', 1960, 480)
+						 ->scaledVersion('right', 512, 960)
+						 ->scaledVersion('bottom', 1960, 640)
+						 ->scaledVersion('left', 512, 960),
 			GDT_Checkbox::make('ad_fallback')->notNull()->initial('0'),
 			GDT_Money::make('ad_price'),
 			GDT_CreatedAt::make('ad_created'),
