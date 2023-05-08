@@ -16,7 +16,7 @@ use GDO\Form\MethodForm;
 final class Order extends MethodForm
 {
 
-	public function createForm(GDT_Form $form): void
+	protected function createForm(GDT_Form $form): void
 	{
 		$table = GDO_Advertisement::table();
 		$form->addFields(
